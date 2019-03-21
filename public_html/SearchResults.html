@@ -1,0 +1,103 @@
+<html>
+     <head>
+    
+        <title>Book Website</title> 
+       <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+        
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        
+      <script type="text/javascript" src="js/jquery.js"></script>	  
+	  <script type="text/javascript" src="js/menu.js"></script>
+      <script>
+        
+    </script>
+       <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" href="">
+       <style>
+       .wishlist-wrapper h2{
+	 font-family: 'Open Sans Condensed', sans-serif;
+	 color: #797979;
+	 font-size: 24px;
+	 font-weight: 150;
+	 padding: 20px;
+         border:20px;
+         margin:0px;
+        }
+        </style>
+
+     </head>
+
+    <body>
+       
+       <nav class="nav-extended teal darken-4" style="margin-bottom: 0px;float:left">
+         <div class="nav-wrapper" style="margin-bottom:20px">
+             <a href="#" class="brand-logo" style="margin:20px">Book Review Store</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="hide-on-med-and-down right">               
+             <li>    
+                <div class="right-align row" style="margin-bottom:0px;height: 64px">
+                 <div class="col s12 " style="height:64px" >
+                  <div class="row" id="topbarsearch">
+                   <div class="input-field col s6 s12 white-text" style="width:500px">
+                 <i class="white-text material-icons prefix waves-effect" id='search'  disableTouchRipple><a id="my-profle-btn" id='searchkey' href="SearchResults.html" onclick="clickSearch()">search</a></i>
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete white-text" >
+                   </div>
+                  </div>
+                 </div>
+                </div>          
+          </div>
+          <div class="nav-content" style="width: 50%;float:left;display: inline-block">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a href="index.html">Home</a></li>
+             <li class="tab"><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          
+          <div id="user-welcome" style="float: left;width: 50%;display: inline-block;height: 48px;padding-right: 40px;text-align: center">
+             <span style="float:right">Welcome &nbsp;<span id="user-name"></span>!&nbsp;
+               <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>
+                   <i class="material-icons prefix" style="vertical-align: middle;position:relative;display: inline-flex;align-items: center;line-height: 36px;height: 36px">dehaze</i>
+               </a>
+
+               <!-- Dropdown Structure -->
+               <ul id='dropdown1' class='dropdown-content'>
+                   <!--<li><a id="edit-profile-btn" href="#!">Edit Profile</a></li>-->
+                   
+                   <li><a id="my-wishlist-btn" href="MyWishList.html">My Wishlist</a></li>
+                   <li><a id="my-profle-btn" href="userProfile.html" onclick="setUserProfileId()">My Activity</a></li>
+                   <li><a id="logout-btn" href="index.html">Logout</a></li>
+               </ul>
+          
+             </span>
+         </div> 
+          
+        </nav>
+        <div class="wishlist-wrapper" style="float:left;width: 100%;margin-top: 0px">
+            <h2 class="teal lighten-3" style="margin: 0 0"><b>Search Results</b></h2>
+            <div id='wishlist' style='margin-top:50px;width: 100%'>
+                
+            </div>
+            
+        </div>
+         <div>
+          <footer class="teal darken-4" style="margin-top: 50px;float:left;width:100%">
+              <p style="font-weight: bolder;text-indent: 10px"><b>Copyright<i class="material-icons">copyright</i>2018</p>
+          </footer>
+        </div>
+       
+        
+
+       <!--JavaScript at end of body for optimized loading-->
+       <script type="text/javascript" src="js/materialize.min.js"></script>
+       <script src="js/init.js"></script>
+       <script src="js/SearchPage.js"></script>
+    </body>
+    
+</html>
+
+        
+           

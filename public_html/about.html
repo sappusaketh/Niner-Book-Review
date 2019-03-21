@@ -1,0 +1,148 @@
+<html>
+     <head>
+    
+        <title>Book Website</title> 
+       <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+        
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        
+      <script type="text/javascript" src="js/jquery.js"></script>
+       <script>
+        $( document ).ready(function() {
+            $('.dropdown-trigger').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrain_width: false, // Does not change width of dropdown to that of the activator
+              hover: false, // Activate on click
+              alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
+              gutter: 20, // Spacing from edge
+              belowOrigin: false // Displays dropdown below the button
+            });
+        });
+    </script>
+       <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" href="">
+      
+      <style>
+          
+      #about-section{
+         margin:0 auto;
+         width: 800px;
+         box-sizing: border-box;
+      }
+      
+      section {padding:1rem;}
+      blockquote {
+        background:#f9f9f9;
+        border-left:1em solid #eee;
+        margin:1.5em 1em;
+        padding:.5em 1em;
+        quotes:"\201C""\201D";
+      }
+      blockquote:before {
+        color:#808080;
+       content:open-quote;
+       font-size:4em;
+       line-height:.1em;
+       margin-right:.25em;
+       vertical-align:-.4em;
+      }
+     blockquote :first-child {display:inline;}
+     blockquote :last-child {margin-bottom:0;}
+     citation {
+       display:block;
+       text-align:right;
+       padding: 0.5em 2em;
+      }
+     citation:before {content: "~ ";}
+
+    </style>
+      
+    </head>
+
+    <body bgcolor="#E6E6FA">
+       
+	   
+       <nav class="nav-extended teal darken-4" style="margin-bottom: 0px;float:left">
+         <div class="nav-wrapper" style="margin-bottom:20px">
+             <a href="#" class="brand-logo" style="margin:20px">Book Review Store</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="hide-on-med-and-down right">               
+             <li>    
+                <div class="right-align row" style="margin-bottom:0px;height: 64px">
+                 <div class="col s12 " style="height:64px" >
+                  <div class="row" id="topbarsearch">
+                   <div class="input-field col s6 s12 white-text" style="width:500px">
+                    <i class="white-text material-icons prefix waves-effect" id='search'  disableTouchRipple><a id="my-profle-btn" id='searchkey' href="SearchResults.html" onclick="clickSearch()">search</a></i>
+                     <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete white-text" >
+                   </div>
+                  </div>
+                 </div>
+                </div>          
+          </div>
+          <div class="nav-content" style="width: 50%;float:left;display: inline-block">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a href="index.html">Home</a></li>
+             <li class="tab"><a href="about.html">About</a></li>
+            </ul>
+          </div>
+         
+          
+          
+        </nav>
+        
+        <div id="about-wrapper" style="float: left">
+             <div id="about-section" style="width:60%;margin-top: 80px">
+                 
+              <section>
+                  <blockquote>
+                      <p style="font-family:sans-serif"><i>Nearly every writer writes a book with a great amount of attention and intention and hopes and dreams. 
+                              And it's important to take that effort seriously and to recognize that a book may have taken ten years of a writer's life, 
+                              that the writer has put heart and soul into it. And it behooves us, as book-review-editors, 
+                              to treat those books with the care and attention they deserve, and to give the writer that respect.</i></p>
+                     <citation>Pamela Paul, New York Times Book Review editor</citation>
+                  </blockquote>
+               </section>  
+                 <p  class="indigo-text text-darken-3" style="font-family:Gill Sans, sans-serif;font-size: 22px;font-color:indigo">
+                   Do you love reading books??<br><br><br>
+                
+                   Why not share your reading experiences??? <br><br><br>
+                 
+                    Book Review Store is your destination to view a plethora of books.
+                    View the bestselling books in market and what other readers think about them.
+                    Discover other book lovers,view their recommendations and connect with them 
+                    over a cup of coffee!<br><br><br> 
+                    
+                    You are just one click away from being a registered user.
+                    Sign up and share your reading experiences by writing a book review or by just rating it.
+                    You also have the power to possess a personal bookshelf by creating your own wishlist.<br><br><br>
+                    
+                    Happy Reading and Reviewing Bibliophiles!!
+ 
+                </p>
+              </div>
+            </div>
+            
+        </div>
+        
+        <div>
+          <footer class="teal darken-4" style="margin-top: 50px;float:left;width:100%">
+              <p style="font-weight: bolder;text-indent: 10px"><b>Copyright<i class="material-icons">copyright</i>2018</p>
+          </footer>
+        </div>
+       
+        
+
+       <!--JavaScript at end of body for optimized loading-->
+       <script type="text/javascript" src="js/materialize.min.js"></script>
+       <script src="js/init.js"></script>
+       <script type="text/javascript" src="js/home.js"></script>
+        
+    </body>
+</html>
+        
+           

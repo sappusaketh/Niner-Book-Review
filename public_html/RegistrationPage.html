@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <title>Form Style 8</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <script type="text/javascript">
+//auto expand textarea
+  function adjust_textarea(h) {
+    h.style.height = "45px";
+    h.style.height = (h.scrollHeight)+"px";
+  }
+  </script>
+  <style>
+  .registeration-form h2{
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 24px;
+	font-weight: 150;
+	padding: 20px;
+        border:20px;
+        margin:0px;
+  }
+  .user-photo{
+      margin:0 auto;
+      width:400px;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+  
+  #firstNameRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #lastNameRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+   #genderRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #phoneRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #organizationRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #occupationRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #dobRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+   #emailRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #passwordRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #password2Row{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #cityRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #countryRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+  }
+  
+  #blogRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+      }
+      
+      #descriptionRow{
+      margin:0 auto;
+      width: 800px;
+      box-sizing: border-box;
+      }
+  
+  .input-field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+  }
+  
+  .input-field label, input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+  } 
+  
+  .input-field input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+  }
+  
+  /**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+  .input-field input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+  }
+  
+  /**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+  .input-field ::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+  }
+  
+  /**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+  .input-field input:not(:placeholder-shown) + label,
+  input:focus + label {
+   transform: translate(0, 0) scale(1);
+   cursor: pointer;
+   }
+
+ .form-style-8 input[type="text"],
+ .form-style-8 input[type="date"],
+ .form-style-8 input[type="datetime"],
+ .form-style-8 input[type="email"],
+ .form-style-8 input[type="number"],
+ .form-style-8 input[type="search"],
+ .form-style-8 input[type="time"],
+ .form-style-8 input[type="url"],
+ .form-style-8 input[type="password"],
+ .form-style-8 textarea,
+ .form-style-8 select 
+ {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+ }
+ .form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+ }
+ .form-style-8 input[type="button"], 
+ .form-style-8 input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+ }
+ .form-style-8 input[type="button"]:hover, 
+ .form-style-8 input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+	background-color:#34CACA;
+ }
+
+ </style>
+</head>
+
+<body>
+    <nav class="nav-extended teal darken-4" style="margin-bottom: 0px;float:left">
+         <div class="nav-wrapper">
+             <a href="#" class="brand-logo" style="margin:20px">Book Review Store</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="hide-on-med-and-down right">               
+             <li>    
+                <div class="right-align row">
+                 <div class="col s12 " >
+                  <div class="row" id="topbarsearch">
+                   <div class="input-field col s6 s12 white-text" style="width:500px;margin:10px">
+                     <i class="white-text material-icons prefix waves-effect" id='search'  disableTouchRipple><a id="my-profle-btn" id='searchkey' href="SearchResults.html" onclick="clickSearch()">search</a></i>
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete white-text" >
+                   </div>
+                  </div>
+                 </div>
+                </div>          
+          </div>
+          <div class="nav-content">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a href="index.html">Home</a></li>
+             <li class="tab"><a href="about.html">About</a></li>
+            </ul>
+          </div>
+    </nav>
+
+
+    <div class="registeration-form" style="float:left;width: 100%;margin-top: 0px">
+        <h2 class="teal lighten-3"><b>Just one more step!</b></h2>
+        <form id='register-form' class="col s12">
+            <div class="user-photo" style="align:center">
+                <img id="user-photo-file" src="./Images/male-icon.jpg" height="380" width="380">
+                <input type="file" onchange="readURL(this);"></input>
+                
+            </div>
+            <div class="row" id="firstNameRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">contacts</i>
+                 <input type="text" id="firstName"  class="validate" placeholder="enter your first name">
+                 <label for="firstName">Enter your First Name</label>
+                </div>
+            </div>
+            <div class="row" id="lastNameRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">contacts</i>
+                 <input type="text" id="lastName"  class="validate" placeholder="enter your last name">
+                 <label for="lastName">Enter your Last Name</label>
+                </div>
+            </div>
+            <div class="row" id="genderRow" style="width:70%;height:90px">
+                <div class="input-field col s12" style="height:100%">
+                  <i class="material-icons prefix">wc</i>
+                  <select id="genderid" class="browser-default">
+                   <option value="" disabled="disabled" selected="selected">Choose your option</option>
+                   <option value="Female">Female</option>
+                   <option value="Male">Male</option>
+                 </select>
+                 <label>Select you Gender</label>
+                </div>
+            </div>
+             <div class="row" id="phoneRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">phone</i>
+                 <input type="tel" id="phonenumber"  class="validate" placeholder="enter your telephone">
+                 <label for="phonenumber" data-error="wrong" data-success="right">Enter your Telephone</label>
+                </div>
+            </div>
+            <div class="row" id="organizationRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">domain</i>
+                 <input type="text" id="organisation"  class="validate" placeholder="where do you work" maxlength="100">
+                 <label for="organisation">Where do you work?</label>
+                </div>
+            </div>
+            <div class="row" id="occupationRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">business_center</i>
+                 <input type="text" id="occupation"  class="validate" placeholder="what do you do" maxlength="100">
+                 <label for="occupation">What do you do?</label>
+                </div>
+            </div>
+           <div class="row" id="dobRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                 <i class="material-icons prefix">cake</i>
+                 <input type="date" id="date"  class="datepicker-table">
+                 <label for="date"  data-error="wrong" data-success="right">Birthdate</label>
+                </div>
+           </div>
+           <div class="row" id="emailRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                <i class="material-icons prefix">email</i>
+                <input type="email" id="email" class="validate" placeholder="Enter email">
+                <label for="email" data-error="wrong" data-success="right">Enter email</label>
+                </div>
+           </div>
+           <div class="row" id="passwordRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:80%;height: 60px">
+                <i class="material-icons prefix">lock_outline</i>
+                <input type="password" id="password" class="validate" placeholder="Enter password">
+                <label for="password">Enter password</label>
+                </div>
+           </div>
+            <div class="row" id="password2Row" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:80%;height: 60px">
+                <i class="material-icons prefix">replay</i>
+                <input type="password" id="password2" class="validate" placeholder="Retype password">
+                <label for="password2">Retype password</label>
+                </div>
+                <span id='message' style="float:right;width: 20%"></span>
+          </div>
+            
+           <div class="row" id="cityRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                <i class="material-icons prefix">location_city</i>
+                <input type="text" id="city" class="validate" placeholder="Enter city">
+                <label for="city">Enter city</label>
+                </div>
+          </div>
+          <div class="row" id="countryRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                <i class="material-icons prefix">public</i>
+                <input type="text" id="country" class="validate" placeholder="Enter country">
+                <label for="country">Enter country</label>
+                </div>
+          </div>
+		  
+		   <div class="row" id="blogRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                <i class="material-icons prefix">link</i>
+                <input type="url" id="blogURL" class="validate" placeholder="Enter blog URL"  maxlength="100">
+                <label for="blogURL">Enter Blog URL(optional)</label>
+                </div>
+          </div>
+            
+         <div class="row" id="descriptionRow" style="width:70%">
+                <div class="input-field hoverable col s6" style="width:100%;height: 60px">
+                <i class="material-icons prefix">edit</i>
+                <textarea type="text" id="description" class="materialize-textarea" placeholder="Enter About me.."  maxlength="100"></textarea>
+                <label for="description">About me..</label>
+                </div>
+          </div>
+          <a class="waves-effect waves-light btn right hoverable" id="register-btn" onclick="registerClick()" style="margin-right:150px;margin-top: 30px"><i class="large material-icons right">done</i>register</a>
+         <!-- <button id='register-btn' onclick='registerClick()' type="button">Register</button>-->
+    
+       <!--<input  type="button" value="Register" />-->
+    </form>
+   </div>
+    
+    <footer class="teal darken-4" style="margin-top: 50px;float:left;width:100%">
+        <p style="font-weight: bolder;text-indent: 10px"><b>Copyright<i class="material-icons">copyright</i>2018</p>
+    </footer>
+
+    
+    
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

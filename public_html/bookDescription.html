@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+         <title>Book Website</title> 
+       <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		 <script type="text/javascript" src="js/menu.js"></script>
+        <!-- <script type="text/javascript" src="js/bookdescription.js"></script>-->
+       <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" href="">
+      <style>
+          .rating-stars {
+            float:left;
+            width:300px;
+           }
+          .rating-stars span { float:right; position:relative; }
+          .rating-stars span input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            opacity:0;
+           }
+          .rating-stars span label {
+             display:inline-block;
+             width:30px;
+             height:30px;
+             text-align:center;
+             font-size:30px;
+             margin-right:2px;
+             line-height:30px;
+             border-radius:50%;
+             -webkit-border-radius:50%;
+           }
+          .rating-stars span:hover ~ span label,
+          .rating-stars span:hover label,
+          .rating-stars span.checked label,
+          .rating-stars span.checked ~ span label {
+             background:#F90;
+             color:#FFF;
+           }
+
+      </style>
+      
+    </head>
+    <body>
+         
+		<nav class="nav-extended teal darken-4" style="margin-bottom: 0px;float:left">
+         <div class="nav-wrapper" style="margin-bottom:20px">
+             <a href="#" class="brand-logo" style="margin:20px">Book Review Store</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="hide-on-med-and-down right">               
+             <li>    
+                <div class="right-align row" style="margin-bottom:0px;height: 64px">
+                 <div class="col s12 " style="height:64px" >
+                  <div class="row" id="topbarsearch">
+                   <div class="input-field col s6 s12 white-text" style="width:500px">
+                     <i class="white-text material-icons prefix waves-effect" id='search'  disableTouchRipple><a id="my-profle-btn" id='searchkey' href="SearchResults.html" onclick="clickSearch()">search</a></i>
+                  <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete white-text" >
+                   </div>
+                  </div>
+                 </div>
+                </div>          
+          </div>
+          <div class="nav-content" style="width: 50%;float:left;display: inline-block">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a href="index.html">Home</a></li>
+             <li class="tab"><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          
+          <div id="user-welcome" style="float: left;width: 50%;display: inline-block;height: 48px;padding-right: 40px;text-align: center">
+             <span style="float:right">Welcome &nbsp;<span id="user-name"></span>!&nbsp;
+               <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>
+                   <i class="material-icons prefix" style="vertical-align: middle;position:relative;display: inline-flex;align-items: center;line-height: 36px;height: 36px">dehaze</i>
+               </a>
+
+               <!-- Dropdown Structure -->
+               <ul id='dropdown1' class='dropdown-content'>
+                   <!--<li><a id="edit-profile-btn" href="#!">Edit Profile</a></li>-->
+                   
+                   <li><a id="my-wishlist-btn" href="MyWishList.html">My Wishlist</a></li>
+                   <li><a id="my-profle-btn" href="userProfile.html" onclick="setUserProfileId()">My Activity</a></li>
+                   <li><a id="logout-btn" href="index.html">Logout</a></li>
+               </ul>
+          
+             </span>
+         </div> 
+          
+        </nav> 
+		 
+        <div class="book-page container">
+              <div class="book-page-left center" style="width: 80%">
+                <div class="book-page-cover" style="float: left;width: 50%">
+                   <img style="margin-top: 50px" itemprop="image" id="bookImage" src="" alt="Power Play - Cara Colter" title="Power Play - Cara Colter">
+                </div>
+                <div class="book-page-info" style="float: left;width:50%;display: block">
+                   <div class="book-page-title" id="bookName" itemprop="name" style="font-weight: bold;font-size:18px;margin-top: 50px">
+                       
+                   </div>
+                     <div id="authorContent">
+                     </div>
+                    <div class="book-page-author">
+						<div id="ratingStar">
+                      <!-- <img class="set-middle" src="http://booklikes.com/include/template/www/img/star_a.png">
+                      <img class="set-middle" src="http://booklikes.com/include/template/www/img/star_a.png">
+                      <img class="set-middle" src="http://booklikes.com/include/template/www/img/star_a.png">
+                      <img class="set-middle" src="http://booklikes.com/include/template/www/img/star_a.png">
+                      <img class="set-middle" src="http://booklikes.com/include/template/www/img/star_i.png"> -->
+					    </div>
+                        <div class="set-hide" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                         <span>Rating: </span>
+						 <strong><span id="rating" itemprop="ratingValue"></span> </strong>
+                         <meta itemprop="bestRating" content="5">
+                         <meta itemprop="worstRating" content="1">
+                         <span itemprop="ratingCount"></span>
+                         <span itemprop="reviewCount "></span>
+                        </div>
+                    </div><br>
+                    <div class="book-page-desc" id="bookDescr">
+                      </div><br>
+					<div class="book-page-params" itemprop="isbn" content="">
+                         <span>ISBN:</span>
+                          <span id="ISBN"> </span>
+                    </div>
+                    
+                    <div class="book-page-params" itemprop="publisher" content="">
+                          <span>Publish date:</span> 
+						  <span id="publishdate"></span>
+					</div>              
+                    
+                    <div class="book-page-params" id= "publishdate" itemprop="publisher" content="Cara Dee">
+                          </div>
+                    
+                    <div id="book-favorite">
+                    <i class="material-icons" id="addFavorite" Onclick="clickFavorite()">favorite_border</i>
+                    </div>
+                </div>
+               </div>
+        </div>
+        <div class="text_review" style="float:left;width: 100%;margin-left: 50px;margin-top: 50px">
+           <h4>User Reviews:</h4> 
+        </div>
+	
+        
+        <div id="reviewContent" class="top-customer-review" style="float: left;width:90%;margin: 45px;border: solid black 1px;padding: 20px;margin-top: 10px">
+            
+            
+      
+		</div> 
+       
+       <div class="text_rating">
+           <h3 style="width:100%;float: left;margin-left: 50px">Review the Book:</h3>
+            </div>
+        
+        <div class="write-post-wrapper" style="margin: 50px;border: solid 2px black;float: left;width: 93%;height:500px;margin-top: 10px">
+         
+            <h4 style="margin-top:40px;margin-left: 10px;margin-bottom: 10px;width: 100%">Rate the Book:</h4>
+            <div class="rating-stars" style="width: 90%;margin-left: 10px;box-sizing: border-box;margin-right: 200px;margin-top: 10px;margin-bottom: 30px;float: left">
+                    <span><input type="radio" name="rating" id="str5" value="5">
+                           <label class="material-icons" for="str5">grade</label>
+                    </span>
+                    <span><input type="radio" name="rating" id="str4" class="material-icons" value="4">
+                           <label class="material-icons" for="str4">grade</label>
+                    </span>
+                    <span><input type="radio" name="rating" id="str3" class="material-icons" value="3">
+                           <label class="material-icons" for="str3">grade</label>
+                    </span>
+                    <span><input type="radio" name="rating" id="str2" class="material-icons" value="2">
+                           <label class="material-icons" for="str2">grade</label>
+                    </span>
+                    <span><input type="radio" name="rating" id="str1" class="material-icons" value="1">
+                           <label class="material-icons" for="str1">grade</label>
+                    </span>
+                    
+            </div>
+           
+            
+            <div class="input-field write-post" style="box-sizing: border-box;;margin-left: 10px;margin-right: 10px;height:50%;float: left">
+                <textarea class="blue lighten-4" id="userpost" style="resize:none;border-radius: 15px;height: 100%;font-size: 20px" rows="700" cols="500" maxlength="500">
+   
+                </textarea>
+                <label for="userpost">Enter the review here.. (limited to 500 characters)</label>
+            </div>
+            <div>
+                <button class="btn waves-effect waves-light" id="postReview" type="button" name="action" style="float:right;margin-right: 10px">Post Review
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            
+        </div>
+      <footer class="teal darken-4" style="margin-top: 50px;float:left;width:100%">
+              <p style="font-weight: bolder;text-indent: 10px"><b>Copyright<i class="material-icons">copyright</i>2018</p>
+      </footer>   
+        <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/bookdescription.js"></script>
+    </body>
+</html>
+    
+

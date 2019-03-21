@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+ <html>
+     <head>
+    
+        <title>Book Website</title> 
+       <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+        
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+        
+    </script>
+<script type="text/javascript" src="js/GenreList.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+       <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" href="">
+      
+     </head>
+     <style>
+         span.b {
+    display: inline-block;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 650px;
+  
+     
+}
+     </style>
+    <body>
+    <nav class="nav-extended teal darken-4" style="margin-bottom: 0px;float:left">
+         <div class="nav-wrapper" style="margin-bottom:20px">
+             <a href="#" class="brand-logo" style="margin:20px">Book Review Store</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="hide-on-med-and-down right">               
+             <li>    
+                <div class="right-align row" style="margin-bottom:0px;height: 64px">
+                 <div class="col s12 " style="height:64px" >
+                  <div class="row" id="topbarsearch">
+                   <div class="input-field col s6 s12 white-text" style="width:500px">
+                        <i class="white-text material-icons prefix waves-effect" id='search'  disableTouchRipple><a id="my-profle-btn" id='searchkey' href="SearchResults.html" onclick="clickSearch()">search</a></i>
+                    <input type="text" placeholder="search" id="autocomplete-input" onchange="clickSearch()" class="autocomplete white-text" >
+                   </div>
+                  </div>
+                 </div>
+                </div>          
+          </div>
+          <div class="nav-content" style="width: 50%;float:left;display: inline-block">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a href="index.html">Home</a></li>
+             <li class="tab"><a href="about.html">About</a></li>
+             <!-- <li class="tab"><a href='RegistrationPage.html'>Register</a></li> -->
+            </ul>
+          </div>
+          
+         <div id="user-welcome" style="float: left;width: 50%;display: inline-block;height: 48px;padding-right: 40px;text-align: center;display:none">
+             <span style="float:right">Welcome &nbsp;<span id="user-name"></span>!&nbsp;
+               <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>
+                   <i class="material-icons prefix" style="vertical-align: middle;position:relative;display: inline-flex;align-items: center;line-height: 36px;height: 36px">dehaze</i>
+               </a>
+
+               <!-- Dropdown Structure -->
+               <ul id='dropdown1' class='dropdown-content'>
+                  
+                   <li><a id="my-wishlist-btn" href="MyWishList.html">My Wishlist</a></li>
+                   <li><a id="my-profle-btn" href="userProfile.html" onclick="setUserProfileId()">My Activity</a></li>
+                   <li><a id="logout-btn" href="#!">Logout</a></li>
+               </ul>
+          
+             </span>
+        </div> 
+          
+        </nav>
+        
+           
+       
+        
+         <div class="teal lighten-3" style="margin-top: 0px;float:left;width: 100%">
+          <div class="subHead" style="float:left;width:50%">
+            <div>
+            <h1 style="margin-right: 0px;float: left;margin-left: 20px">Home for your books!</h1> 
+            </div>
+            <div style="width:50%;float:left">
+              <p class="clear" style="font-size: 20px;margin-left: 20px;width: 100%;margin-right: 0px;font-style: italic;color: #919f89;">Read-Write-Connect.</p>
+            </div>
+          </div>
+            <div class="login_form" id="login_form" style="float: right;width: 500px;margin-right:50px;display:inline-block;position: relative;margin-top: 25px;margin-bottom: 20px"> 
+        
+                <input type="email" placeholder="Enter Email Address" id="eadd" class="validate" required style=" display: inline-block;border: 1px solid gray;background-color: white;text-indent: 2px;border-radius: 3px">
+        
+                <input type="password" placeholder="Enter Password" id="psw" required style="display: inline-block;border: 1px solid gray;background-color: white;text-indent: 2px;border-radius: 3px">
+        
+
+                <a class="waves-effect waves-light btn" id='login' style='margin-top:20px;height:40px;margin-right: 50p' onClick="loginClick()">LOGIN</a><br>
+                <div id="signUp_wrapper" style="margin-top: 10px">
+                  <span style="float:left">New here? Create a free account! &nbsp;&nbsp;</span>
+                  <div style="float:left">
+                     <a href='RegistrationPage.html'>SIGN UP</a>   
+                  </div>
+                </div>
+             
+            </div>
+         </div>
+        <div class="row">
+       <span class="b">
+
+        <div class="caraousel-wrapper" style="width: 100%;overflow: auto;box-sizing: border-box">
+         <div class="carousel carousel-slider center" id="demo-carousel-auto" data-indicators="true" style="height:800px">
+ 
+               <a class="carousel-item" href="#one!"><img src="./images/Harrypotter.jpg"></a>
+               <a class="carousel-item" href="#two!"><img src="./images/bookquote1.jpg"></a>
+               <a class="carousel-item" href="#three!"><img src="./images/bookquote2.jpg"></a>
+               <a class="carousel-item" href="#four!"><img src="./images/somanybooks.jpg"></a>
+               <a class="carousel-item" href="#five!"><img src="./images/gallery-1427132983-book-lover-quotes.jpg"></a>
+            
+          </div>
+          
+        </div>
+        </span>
+   <div class="u-defaultType">
+          
+                 <div class="left white" style="width: 25%;margin-top:60px;background-color: white">
+                  <ul id="genres"></ul>
+
+          </div>
+        <div class="left" style="width: 25%;margin-top:80px">
+                  <a class="gr-hyperlink" href="/genres/ebooks">Ebooks</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/fiction">Fiction</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/graphic-novels">Graphic Novels</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/historical-fiction">Historical Fiction</a><br>
+
+                                    <a class="gr-hyperlink" href="/genres/memoir">Memoir</a><br>
+
+          </div>
+          <div class="left" style="width: 25%;margin-top:80px">
+                  <a class="gr-hyperlink" href="/genres/music">Music</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/mystery">Mystery</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/non-fiction">Nonfiction</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/poetry">Poetry</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/psychology">Psychology</a><br>
+
+              <!--    <a class="gr-hyperlink" href="/genres/romance">Romance</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/science">Science</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/science-fiction">Science Fiction</a><br>-->
+
+          </div>
+          <div class="left" style="width: 25%;margin-top:80px">
+                  <a class="gr-hyperlink" href="/genres/self-help">Self Help</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/sports">Sports</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/thriller">Thriller</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/travel">Travel</a><br>
+
+                  <a class="gr-hyperlink" href="/genres/young-adult">Young Adult</a><br>
+
+                 <!-- <a class="gr-hyperlink" href="/genres">More genres</a>-->
+
+          </div>
+  </div>
+       
+        </div>
+       <!--add script for carousel-->
+        <script>
+ 
+         $(document).ready(function(){
+            $('#demo-carousel-auto').carousel();
+            setInterval(function() {
+             $('#demo-carousel-auto').carousel('next');
+            }, 1500);   
+ 
+         });
+        </script> 
+       
+   
+        </div>
+        
+        <div>
+          <footer class="teal darken-4" style="margin-top: 50px;float:left;width:100%">
+              <p style="font-weight: bolder;text-indent: 10px"><b>Copyright<i class="material-icons">copyright</i>2018</p>
+          </footer>
+        </div>
+       
+        
+
+       <!--JavaScript at end of body for optimized loading-->
+       <script type="text/javascript" src="js/materialize.min.js"></script>
+       <script type="text/javascript" src="js/home.js"></script>
+    </body>
+  </html>
+        
